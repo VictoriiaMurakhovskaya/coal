@@ -1,6 +1,4 @@
 import sqlite3
-import os
-
 
 class dbAPI:
     db_path = r'assets/coal.db'
@@ -99,19 +97,3 @@ class dbAPI:
         cur.execute("""SELECT name FROM sqlite_master
                        WHERE type = 'table';""")
         return [item[0] for item in cur.fetchall()]
-
-    def get_columns(self, table_name):
-        """
-        Получение списка колонок в заданной таблицы
-        :param table_name: имя таблицы
-        :return: Возвращает list названий колонок заданной таблицы
-        """
-        cur = self.conn.cursor()
-        query = "PRAGMA table_info({});".format(table_name)
-        cur.execute(query)
-        return [item[1] for item in cur.fetchall()]
-
-
-
-
-

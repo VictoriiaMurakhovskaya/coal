@@ -6,32 +6,146 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>672</width>
+    <height>431</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>200</width>
+    <height>200</height>
+   </size>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>60</y>
-      <width>781</width>
-      <height>461</height>
+      <y>80</y>
+      <width>651</width>
+      <height>271</height>
      </rect>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>11</x>
+      <x>180</x>
       <y>10</y>
-      <width>381</width>
-      <height>31</height>
+      <width>231</width>
+      <height>60</height>
      </rect>
+    </property>
+    <property name="title">
+     <string>Таблица БД</string>
+    </property>
+    <widget class="QComboBox" name="comboBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>211</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QToolButton" name="createButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>41</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../../Users/dmura/OneDrive/Рабочий стол/CRUD_icons/create.png</normaloff>../../../Users/dmura/OneDrive/Рабочий стол/CRUD_icons/create.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>34</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="readButton">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>10</y>
+      <width>41</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../../Users/dmura/OneDrive/Рабочий стол/CRUD_icons/read.png</normaloff>../../../Users/dmura/OneDrive/Рабочий стол/CRUD_icons/read.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>34</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="deleteButton">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>10</y>
+      <width>41</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../../Users/dmura/OneDrive/Рабочий стол/CRUD_icons/delete.png</normaloff>../../../Users/dmura/OneDrive/Рабочий стол/CRUD_icons/delete.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>34</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="updateButton">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>10</y>
+      <width>41</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../../Users/dmura/OneDrive/Рабочий стол/CRUD_icons/update.png</normaloff>../../../Users/dmura/OneDrive/Рабочий стол/CRUD_icons/update.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>34</width>
+      <height>50</height>
+     </size>
     </property>
    </widget>
   </widget>
@@ -40,7 +154,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>672</width>
      <height>31</height>
     </rect>
    </property>
@@ -107,6 +221,10 @@
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>comboBox</tabstop>
+  <tabstop>tableView</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
