@@ -26,7 +26,7 @@ class dbAPI:
         cur.execute("""CREATE TABLE IF NOT EXISTS employees(
                        code STRING PRIMARY KEY,
                        full_name STRING,
-                       area_code INT,
+                       area_code INT REFERENCES areas(code),
                        position_code INT,
                        RNN STRING,
                        SIK STRING,
@@ -58,7 +58,7 @@ class dbAPI:
                        date DATE,
                        area_code INT,
                        shift INT,
-                       emp_code STRING,
+                       emp_code STRING REFERENCES employees(code),
                        hours INT);
                     """)
 
@@ -73,7 +73,8 @@ class dbAPI:
                     """)
 
         cur.execute("""CREATE TABLE IF NOT EXISTS limits(
-                       area_code STRING PRIMARY KEY,
+                       id INT PRIMARY KEY,
+                       area_code REFERENCES areas(code),
                        plan REAL,
                        volume REAL,
                        removal_plan REAL,

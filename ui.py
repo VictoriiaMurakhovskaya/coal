@@ -11,7 +11,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
+        MainWindow.setObjectName("Задания SQL")
         MainWindow.resize(672, 431)
         MainWindow.setIconSize(QtCore.QSize(200, 200))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -86,6 +86,11 @@ class Ui_MainWindow(object):
         self.action_6.setObjectName("action_6")
         self.action_7 = QtGui.QAction(MainWindow)
         self.action_7.setObjectName("action_7")
+        self.action_8 = QtGui.QAction(MainWindow)
+        self.action_8.setObjectName("action_8")
+        self.action_9 = QtGui.QAction(MainWindow)
+        self.action_9.setObjectName("action_9")
+        self.menu.addAction(self.action_8)
         self.menu_2.addAction(self.action)
         self.menu_2.addAction(self.action_2)
         self.menu_2.addAction(self.action_3)
@@ -93,9 +98,10 @@ class Ui_MainWindow(object):
         self.menu_2.addAction(self.action_5)
         self.menu_3.addAction(self.action_6)
         self.menu_3.addAction(self.action_7)
+        self.menu_3.addAction(self.action_9)
+        self.menubar.addAction(self.menu.menuAction())
         self.menubar.addAction(self.menu_2.menuAction())
         self.menubar.addAction(self.menu_3.menuAction())
-        self.menubar.addAction(self.menu.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -103,9 +109,9 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Задание SQL"))
         self.groupBox.setTitle(_translate("MainWindow", "Таблица БД"))
-        self.menu.setTitle(_translate("MainWindow", "Выход"))
+        self.menu.setTitle(_translate("MainWindow", "Файл"))
         self.menu_2.setTitle(_translate("MainWindow", "Запросы"))
         self.menu_3.setTitle(_translate("MainWindow", "Отчеты"))
         self.action.setText(_translate("MainWindow", "Объем добычи"))
@@ -115,3 +121,5 @@ class Ui_MainWindow(object):
         self.action_5.setText(_translate("MainWindow", "Список работников"))
         self.action_6.setText(_translate("MainWindow", "Табель"))
         self.action_7.setText(_translate("MainWindow", "Добыча"))
+        self.action_8.setText(_translate("MainWindow", "Выход"))
+        self.action_9.setText(_translate("MainWindow", "Лимиты"))
