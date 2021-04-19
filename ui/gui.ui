@@ -70,7 +70,7 @@
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../Users/dmura/OneDrive/Рабочий стол/CRUD_icons/create.png</normaloff>../../../Users/dmura/OneDrive/Рабочий стол/CRUD_icons/create.png</iconset>
+      <normaloff>../img/create.png</normaloff>../img/create.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -182,9 +182,19 @@
     <addaction name="action_7"/>
     <addaction name="action_9"/>
    </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>Процедуры</string>
+    </property>
+    <addaction name="action_1"/>
+    <addaction name="action_10"/>
+    <addaction name="action_11"/>
+    <addaction name="action_12"/>
+   </widget>
    <addaction name="menu"/>
    <addaction name="menu_2"/>
    <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="action">
@@ -230,6 +240,26 @@
   <action name="action_9">
    <property name="text">
     <string>Лимиты</string>
+   </property>
+  </action>
+  <action name="action_1">
+   <property name="text">
+    <string>Процедура 1</string>
+   </property>
+  </action>
+  <action name="action_10">
+   <property name="text">
+    <string>Процедура 2</string>
+   </property>
+  </action>
+  <action name="action_11">
+   <property name="text">
+    <string>Процедура 3</string>
+   </property>
+  </action>
+  <action name="action_12">
+   <property name="text">
+    <string>Процедура 4</string>
    </property>
   </action>
  </widget>

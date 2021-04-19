@@ -41,7 +41,8 @@ class dbAPI:
                        shift INT,
                        area_code INT REFERENCES areas(code),
                        coal_id STRING REFERENCES coal_table(id),
-                       volume REAL);
+                       volume REAL,
+                       moved REAL);
                     """)
 
         cur.execute("""CREATE TABLE IF NOT EXISTS spending(

@@ -48,8 +48,12 @@ class TheWindow(qw.QMainWindow):
         for item in [self.ui.action_6, self.ui.action_7, self.ui.action_9]:
             item.triggered.connect(self.report)
 
+        for item in [self.ui.action_1, self.ui.action_10, self.ui.action_11, self.ui.action_12]:
+            item.triggered.connect(self.proc)
+
         # заполнение ComboBox с таблицами, создание слота
         db = dbAPI()
+        self.db = db
         self.ui.comboBox.addItems(db.get_tables())
         self.ui.comboBox.currentIndexChanged.connect(self.load_table)
 
@@ -197,6 +201,51 @@ class TheWindow(qw.QMainWindow):
                            ORDER BY area_code
                         """)
         rui.show()
+
+    def proc(self):
+        query_name = self.sender().text()
+        qry = QSqlQuery()
+        p_name = 'Номер участка'
+
+        if query_name == 'Процедура 1':
+            qry.prepare("""SELECT date, shift, coal_id, volume FROM production
+                           WHERE volume is moved
+                           GROUP BY date, volume
+                           """)
+
+        elif query_name == 'Процедура 2':
+            p_name = 'Номер участка'
+            value, ok = QInputDialog.getInt(self, 'Ввод параметра', p_name)
+            qry.prepare("""SELECT month, year, area_code, plan, removal_plan FROM limits
+                           WHERE  year is strftime('%Y', 'now') AND area_code is :param
+                           """)
+            qry.bindValue(':param', str(value))
+
+        elif query_name == 'Процедура 3':
+            qry.exec("""INSERT INTO pf(id, name)
+                        VALUES
+                            (14, 'Рязанский ПФ'),
+                            (15, 'Уральский ПФ),
+                            (16, 'Забайкальский ПФ)
+                        """)
+
+        elif query_name == 'Процедура 4':
+            p_name = 'Номер участка'
+            value, ok = QInputDialog.getInt(self, 'Ввод параметра', p_name)
+            qry.prepare("""SELECT plan-volume, removal_plan-removal_volume FROM limits
+                           WHERE area_code is :param
+                           """)
+            qry.bindValue(':param', str(value))
+
+        if query_name != 'Процедура 3':
+            qry.exec()
+            sqlq = QSqlQueryModel(self)
+            qui = TheQResult(self)
+            qui.ui.tableView.setModel(sqlq)
+            sqlq.setQuery(qry)
+            qui.ui.tableView.show()
+            qui.show()
+
 
     def on_exit(self):
         try:
